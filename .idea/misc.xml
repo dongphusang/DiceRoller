@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/sangs/Desktop/DiceRoller/app/src/main/res/drawable/ic_setting.xml" value="0.127" />
         <entry key="..\:/Users/sangs/Desktop/DiceRoller/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/sangs/Desktop/DiceRoller/app/src/main/res/menu/mymenu.xml" value="0.13148148148148148" />
       </map>
     </option>
   </component>
