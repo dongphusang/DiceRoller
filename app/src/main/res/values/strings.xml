@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DiceRoller</string>
+    <string name="default_die_val">0</string>
 </resources>
