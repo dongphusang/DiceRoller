@@ -1,7 +1,5 @@
 package com.github.diceroller;
 
-import static android.view.Gravity.*;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
@@ -9,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,12 +20,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText customNumbSides;
     Button rollOnceButton;
     Button rollTwiceButton;
-    Button fourSidedDie;
-    Button sixSidedDie;
-    Button eightSidedDie;
-    Button tenSidedDie;
-    Button twelveSidedDie;
-    Button twentySidedDie;
+    ImageButton fourSidedDie;
+    ImageButton sixSidedDie;
+    ImageButton eightSidedDie;
+    ImageButton tenSidedDie;
+    ImageButton twelveSidedDie;
+    ImageButton twentySidedDie;
     Button confirmNumbSides;
     Switch savePreferences;
     DieData dieManager;
@@ -78,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         switch(view.getId()) {
-            
+
             case R.id.roll_once:
                 if (dieManager.getNumberOfSides() == 0)
                     Toast.makeText(this,"Please pick a die",Toast.LENGTH_SHORT).show();
@@ -100,6 +99,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.four_sided_die:
                 dieManager.setNumberOfSides(4);
+                numbsSides.append(4+", ");
+                editor.putString(ENTERED_NUMBS_SIDES, numbsSides.toString()); // saving list of numbs sides
+                editor.apply();
                 // reset results
                 firstResult.setText("0");
                 secondResult.setText("0");
@@ -108,6 +110,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.six_sided_die:
                 dieManager.setNumberOfSides(6);
+                numbsSides.append(6+", ");
+                editor.putString(ENTERED_NUMBS_SIDES, numbsSides.toString()); // saving list of numbs sides
+                editor.apply();
                 firstResult.setText("0");
                 secondResult.setText("0");
                 Toast.makeText(this, "Six sided die selected", Toast.LENGTH_SHORT).show();
@@ -115,6 +120,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.eight_sided_die:
                 dieManager.setNumberOfSides(8);
+                numbsSides.append(8+", ");
+                editor.putString(ENTERED_NUMBS_SIDES, numbsSides.toString()); // saving list of numbs sides
+                editor.apply();
                 firstResult.setText("0");
                 secondResult.setText("0");
                 Toast.makeText(this, "Eight sided side selected", Toast.LENGTH_SHORT).show();
@@ -122,6 +130,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.ten_sided_die:
                 dieManager.setNumberOfSides(10);
+                numbsSides.append(10+", ");
+                editor.putString(ENTERED_NUMBS_SIDES, numbsSides.toString()); // saving list of numbs sides
+                editor.apply();
                 firstResult.setText("0");
                 secondResult.setText("0");
                 Toast.makeText(this, "Ten sided side selected", Toast.LENGTH_SHORT).show();
@@ -129,6 +140,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.twelve_sided_die:
                 dieManager.setNumberOfSides(12);
+                numbsSides.append(12+", ");
+                editor.putString(ENTERED_NUMBS_SIDES, numbsSides.toString()); // saving list of numbs sides
+                editor.apply();
                 firstResult.setText("0");
                 secondResult.setText("0");
                 Toast.makeText(this, "Twelve sided die selected", Toast.LENGTH_SHORT).show();
@@ -136,6 +150,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.twenty_sided_die:
                 dieManager.setNumberOfSides(20);
+                numbsSides.append(20+", ");
+                editor.putString(ENTERED_NUMBS_SIDES, numbsSides.toString()); // saving list of numbs sides
+                editor.apply();
                 firstResult.setText("0");
                 secondResult.setText("0");
                 Toast.makeText(this, "Twenty sided die selected", Toast.LENGTH_SHORT).show();
@@ -167,7 +184,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         if (sharedPreferences.getBoolean(SWITCH_STATE, false)) {
             savePreferences.setChecked(true);
-            numbsSides = new StringBuffer(sharedPreferences.getString(ENTERED_NUMBS_SIDES,""));
+            //numbsSides = new StringBuffer(sharedPreferences.getString(ENTERED_NUMBS_SIDES,""));
             Toast.makeText(this, sharedPreferences.getString(ENTERED_NUMBS_SIDES, "none"), Toast.LENGTH_SHORT).show();
         }
         else {

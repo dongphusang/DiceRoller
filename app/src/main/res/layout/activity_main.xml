@@ -81,23 +81,29 @@
                 android:layout_height="match_parent"
                 android:columnCount="6">
 
-                <Button
+                <ImageButton
                     android:id="@+id/four_sided_die"
+                    android:background="@drawable/d4"
                     style="@style/dieSelection"/>
-                <Button
+                <ImageButton
                     android:id="@+id/six_sided_die"
+                    android:background="@drawable/d6"
                     style="@style/dieSelection"/>
-                <Button
+                <ImageButton
                     android:id="@+id/eight_sided_die"
+                    android:background="@drawable/d8"
                     style="@style/dieSelection"/>
-                <Button
+                <ImageButton
                     android:id="@+id/ten_sided_die"
+                    android:background="@drawable/d10"
                     style="@style/dieSelection"/>
-                <Button
+                <ImageButton
                     android:id="@+id/twelve_sided_die"
+                    android:background="@drawable/d12"
                     style="@style/dieSelection"/>
-                <Button
+                <ImageButton
                     android:id="@+id/twenty_sided_die"
+                    android:background="@drawable/d20"
                     style="@style/dieSelection"/>
             </GridLayout>
         </HorizontalScrollView>
@@ -131,8 +137,5 @@
             android:layout_row="3"
             android:layout_gravity="center"
             android:text="save preferences" />
-
-
-
     </GridLayout>
 </LinearLayout>
