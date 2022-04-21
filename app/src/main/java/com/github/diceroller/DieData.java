@@ -1,3 +1,8 @@
+/**
+ * TOBE: Contains data of a die; number of sides, their first roll and second roll
+ */
+
+
 package com.github.diceroller;
 
 import java.util.Random;
